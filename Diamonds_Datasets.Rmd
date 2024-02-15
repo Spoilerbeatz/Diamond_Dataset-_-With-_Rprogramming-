@@ -12,9 +12,9 @@ library(ggplot2)
 
 # Loading the dataset
 
-```{r}
-data("diamonds") # diamonds datasets
-print(diamonds)
+```{r load_data, message=TRUE}
+diamonds_df = read_csv('./datasets/diamonds.csv')
+print(diamonds_df)
 ```
 
 ## Exploring the dataset
@@ -33,8 +33,20 @@ While transforming the dataset, we explore and start by knowing the following:
 
 ```{r}
 
-str (diamonds)
+str (diamonds_df)
 
+```
+
+```{r}
+#Dimension of the dataset
+rc <- dim(diamonds_df)
+cat('Row -', rc[1], '\n')
+cat('Column -', rc[2])
+```
+
+```{r}
+#data type of each varibl
+sapply(diamonds, class)
 ```
 
 ## Number/ Percentage of Missing Values

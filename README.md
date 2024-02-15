@@ -1,6 +1,6 @@
 # Diamond_Dataset-\_-With-\_Rprogramming
 
-The **`diamonds`** dataset is a built-in dataset in the **`ggplot2`** package in R. [It contains measurements on 10 different variables for 53,940 different diamonds](https://www.statology.org/diamonds-dataset-r/). Here are the variables included in the dataset:
+The **`diamonds`** dataset is a built-in dataset in the **`ggplot2`** package in R. It contains measurements on 10 different variables for 50,000 different diamonds. Here are the variables included in the dataset:
 
 1.  **`carat`**: Weight of the diamond
 
@@ -25,3 +25,9 @@ The **`diamonds`** dataset is a built-in dataset in the **`ggplot2`** package in
 They allow us to practice data manipulation, visualization, and statistical analysis.
 
 This will provide you with a statistical summary of each variable in the dataset.
+
+### Data Exploration
+
+### Distribution Of Cut Categories
+
+![Cut Distribution](Cut_dist.png){width="585"}
