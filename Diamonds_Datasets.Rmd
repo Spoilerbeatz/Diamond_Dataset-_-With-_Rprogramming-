@@ -46,13 +46,13 @@ cat('Column -', rc[2])
 
 ```{r}
 #data type of each varibl
-sapply(diamonds, class)
+sapply(diamonds_df, class)
 ```
 
 ## Number/ Percentage of Missing Values
 
 ```{r}
-colSums(is.na(diamonds))
+colSums(is.na(diamonds_df))
 ```
 
 ## Assignment: Research on how to get the percentage of missing values in R
@@ -60,7 +60,7 @@ colSums(is.na(diamonds))
 #### Descriptive Summary (Statistics) of the dataset in general
 
 ```{r}
-desc_sum <- summary(diamonds)
+desc_sum <- summary(diamonds_df)
 print(desc_sum)
 ```
 
@@ -68,20 +68,20 @@ print(desc_sum)
 
 ```{r}
 # Basic data celeaning and conversion to interger
-diamonds <- diamonds %>% 
+diamonds_df <- diamonds_df %>% 
    mutate(across(c(carat,depth, table, x, y, z), as.numeric)) %>% 
    filter_all(all_vars(!is.na(.))) # Remove rows with any missing values
 ```
 
 ```{r}
-head(diamonds)
+head(diamonds_df)
 ```
 
 ### Exploratory Analysis
 
 ```{r}
 # counting the number of the 
-count_cut = diamonds %>%
+count_cut = diamonds_df %>%
    count(cut)
 
 print(count_cut)
@@ -89,7 +89,7 @@ print(count_cut)
 
 ```{r}
 # counting the number of the 
-count_clarity = diamonds %>%
+count_clarity = diamonds_df %>%
    count(clarity)
 
 print(count_clarity)
@@ -105,7 +105,7 @@ print(count_color)
 
 ```{r}
 # counting the number of the 
-count_depth = diamonds %>%
+count_depth = diamonds_df %>%
    count(depth)
 
 print(count_depth)
@@ -114,9 +114,22 @@ print(count_depth)
 ### Graph Plotting
 
 ```{r}
-ggplot(diamonds,aes(x = clarity, fill = clarity)) + geom_bar() +
+cut_dist <- ggplot(diamonds_df, aes(x = cut, fill = cut)) +
+   geom_bar() +
+   labs(title = "Distrubution of Cut Categories") + 
+   theme_minimal()
+cut_dist
+ggsave('./image_plot/clarity_dist.png', cut_dist + scale =  theme(panel.background = element_rect(fill = 'white')), width = 12, height = 7)
+```
+
+```{r}
+ggplot(diamonds_df,aes(x = clarity, fill = clarity)) + geom_bar() +
    labs(title = "Distribution of Clarity Categories", xlab = "Clarity Category") +
    theme_dark()
+
+clarity_dist
+
+ggsave('./image_plot/clarity_dist.png', clarity, width = 7, height = 7)
 ```
 
 ### Data Questions to analyse
@@ -135,7 +148,7 @@ ggplot(diamonds,aes(x = clarity, fill = clarity)) + geom_bar() +
 
 ```{r}
 #Scatter plot of carat vs. price
-ggplot(diamonds, aes(x = carat, y = price, fill = carat)) +
+ggplot(diamonds_df, aes(x = carat, y = price, fill = carat)) +
    geom_point(alpha = 0.5) +
    labs(title = "Scatter Plot of carat vs. price",
         x = "Carat",
@@ -148,7 +161,7 @@ ggplot(diamonds, aes(x = carat, y = price, fill = carat)) +
 -   Using the graphical plot above, its safe to say that the increase in carat weight results to the the increase in price, while there's is other attributes that contributes to it. e.g(clarity, color, depth, etc.).
 
 ```{r}
-ggplot(diamonds, aes(x = cut, y = price, fill = cut)) +
+ggplot(diamonds_df, aes(x = cut, y = price, fill = cut)) +
    geom_boxplot() +
    labs(title = "Boxplot of Prices of Cut",
         x = "Cut",
@@ -205,7 +218,7 @@ theme_dark(dark)
 ## Q4: Wh
 
 ```{r}
-average_price <- diamonds %>% 
+average_price <- diamonds_df %>% 
    group_by(cut, color, clarity) %>% 
    summarize(avg_price = mean(price))
 
