@@ -31,3 +31,7 @@ This will provide you with a statistical summary of each variable in the dataset
 ### Distribution Of Cut Categories
 
 ![Cut Distribution](Cut_dist.png){width="585"}
+
+### Distribution Of Clarity Categories
+
+![Clarity Distribution](Clarity.png)
