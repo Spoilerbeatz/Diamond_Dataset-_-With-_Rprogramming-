@@ -28,10 +28,22 @@ This will provide you with a statistical summary of each variable in the dataset
 
 ### Data Exploration
 
+### Distribution of Carat
+
+![Scatter Plot of carat vs. price](image_plot/Scatter Plot of carat vs. price.png)
+
 ### Distribution Of Cut Categories
 
-![Cut Distribution](Cut_dist.png){width="585"}
+![Cut Distribution](image_plot/Cut_dist.png)
 
 ### Distribution Of Clarity Categories
 
-![Clarity Distribution](Clarity.png)
+![Clarity Distribution](image_plot/Clarity.png)
+
+![Color Distribution](image_plot/Color.png){width="555"}
+
+![Boxplot of Prices of Cut](image_plot/Boxplot of Prices of Cut.png)
+
+![Boxplot of Prices of Clarity](image_plot/Boxplot of Prices of Clarity.png)
+
+![Boxplot of Prices of Color](image_plot/Boxplot of Prices of Color.png)

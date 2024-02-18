@@ -133,6 +133,17 @@ clarity_dist
 ggsave('./image_plot/clarity_dist.png', cut_dist + scale =  theme(panel.background = element_rect(fill = 'white')), width = 12, height = 7)
 ```
 
+```{r}
+color_dist <- ggplot(diamonds_df,aes(x = color, fill = color)) + 
+   geom_bar() +
+   labs(title = "Distribution of Color Categories", xlab = "Color Category") +
+   theme_minimal()
+
+color_dist
+
+ggsave('./image_plot/color_dist.png', cut_dist + scale =  theme(panel.background = element_rect(fill = 'white')), width = 12, height = 7)
+```
+
 ### Data Questions to analyse
 
 -   What is the distribution of carat weights in the dataset, and how does it correlate with the price of diamonds?
@@ -166,6 +177,24 @@ ggplot(diamonds_df, aes(x = cut, y = price, fill = cut)) +
    geom_boxplot() +
    labs(title = "Boxplot of Prices of Cut",
         x = "Cut",
+        y = "Price") +
+   theme_minimal()
+```
+
+```{r}
+ggplot(diamonds_df, aes(x = clarity, y = price, fill = clarity)) +
+   geom_boxplot() +
+   labs(title = "Boxplot of Prices of Clarity",
+        x = "Clarity",
+        y = "Price") +
+   theme_minimal()
+```
+
+```{r}
+ggplot(diamonds_df, aes(x = color, y = price, fill = color)) +
+   geom_boxplot() +
+   labs(title = "Boxplot of Prices of Color",
+        x = "Color",
         y = "Price") +
    theme_minimal()
 ```
