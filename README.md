@@ -30,7 +30,7 @@ This will provide you with a statistical summary of each variable in the dataset
 
 ### Distribution of Carat
 
-![Scatter Plot of carat vs. price](image_plot/Scatter Plot of carat vs. price.png)
+![Scatter Plot of carat vs. price](image_plot/Scatter%20Plot%20of%20carat%20vs.%20price.png)
 
 ### Distribution Of Cut Categories
 
@@ -42,8 +42,8 @@ This will provide you with a statistical summary of each variable in the dataset
 
 ![Color Distribution](image_plot/Color.png){width="555"}
 
-![Boxplot of Prices of Cut](image_plot/Boxplot of Prices of Cut.png)
+![Boxplot of Prices of Cut](image_plot/Boxplot%20of%20Prices%20of%20Cut.png)
 
-![Boxplot of Prices of Clarity](image_plot/Boxplot of Prices of Clarity.png)
+![Boxplot of Prices of Clarity](image_plot/Boxplot%20of%20Prices%20of%20Clarity.png)
 
-![Boxplot of Prices of Color](image_plot/Boxplot of Prices of Color.png)
+![Boxplot of Prices of Color](image_plot/Boxplot%20of%20Prices%20of%20Color.png)
