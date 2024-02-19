@@ -70,3 +70,23 @@ test_data <- diamonds_selected[- train_index, ]
 ```{r}
 test_data
 ```
+
+### Model Building Using the Linear Regression Algorithm
+
+Linear regression is a statistical method used to model a relationship between the dependent variable (target)
+
+```{r}
+#linear Regression
+linear_model <- lm(price ~ ., data = train_data)
+```
+
+```{r}
+#Evaluate linear Regression model
+linear_predictions_train <- predict(linear_model, newdata = train_data)
+linear_mse_train <- mean((train_data$price - linear_predictions_train)^2)
+cat("\nLinear Regression - Mean Squared Error (Train):", linear_mse_train, "\n")
+
+linear_predictions_test <- predict(linear_model, newdata = test_data)
+linear_mse_test <- mean((test_data$price - linear_predictions_test)^2)
+cat("Linear Regression - Mean Squared Error (Test):", linear_mse_test, "\n")
+```
